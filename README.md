@@ -6,7 +6,7 @@ The convenient agent for continuous delivery and deployment to your servers.
 * Http delivery channel, POST method
 * Upload file up to MAX_SIZE
 * It runs a custom bash script after uploading file
-* Return stdout of bash script to CI/CD system
+* Return a bash script stdout to a calling CI/CD system
 * Multiple projects per server
 * Security is primarily provided by NGINX
 * Allow to opt out Cloud Buckets services, Docker Registry, e.t.c
