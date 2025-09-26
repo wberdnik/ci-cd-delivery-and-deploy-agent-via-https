@@ -5,7 +5,7 @@ The convenient agent for continuous delivery and deployment to your servers.
 
 * Http delivery channel, POST method
 * Upload file up to MAX_SIZE
-* Run a custom bash script after upload file
+* It runs a custom bash script after uploading file
 * Return stdout of bash script to CI/CD system
 * Multiple projects per server
 * Security is primarily provided by NGINX
@@ -14,13 +14,13 @@ The convenient agent for continuous delivery and deployment to your servers.
 
 ## Getting Started
 
-* A CI/CD pipeline just run a script bellow after build JS assets, Docker image, e.t.c.
+* Just in a CI/CD pipeline it needs to run a bellow code after building JS assets, Docker image, e.t.c.
   
 ```sh
 curl --location 'httpS://Login:${{ secrets.DEPLOY_PASS }}@YourDomain/YourNativeToken?project=YourProject' --form 'file=@"pathToFileOnBuildServer/deployArchiveFileName"'
 ```
 
-*  A nginx configuration file can consist parts like this
+*  A nginx configuration file can consist parts similar this
   
   ```conf
   location = /YourNativeToken {
@@ -37,7 +37,7 @@ curl --location 'httpS://Login:${{ secrets.DEPLOY_PASS }}@YourDomain/YourNativeT
  ssl_certificate_key /etc/path_key/privkey.pem;
 
   ```
-* The custom bash script file is stored in ```/etc/cicd_agent``` folder.
+* The custom bash script file should be stored in the ```/etc/cicd_agent``` folder.
 ```sh
 #!/bin/bash
 # /etc/cicd_agent/YourProject.sh (must be executable)
@@ -52,7 +52,7 @@ docker load image.file
 
 ```
 
-* See ```go internal/config/config.go``` file
+* To get more information, read the ```go internal/config/config.go``` file
 
 ## License
 
